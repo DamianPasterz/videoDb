@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { StoreModule } from '@ngrx/store';
+import { FavouriteBarComponent } from './favourite-bar/favourite-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FavouriteBarComponent
   ],
   imports: [
     BrowserModule,
