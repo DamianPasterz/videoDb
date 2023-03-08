@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { StoreModule } from '@ngrx/store';
 import { FavouriteBarComponent } from './favourite-bar/favourite-bar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FavouriteBarComponent
+    FavouriteBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
