@@ -17,10 +17,10 @@ export class SearchBarComponent implements OnInit {
 
 public ngOnInit():void {
  this.inputService.onProviderAndIdCheck("")
-  }
+}
 public onAddvideo(form: NgForm){
   console.log(form);
   if(form.invalid) this.showValidateErrors =true
- const videoData = this.inputService.onProviderAndIdCheck(form.value.value)
+  const videoData = this.inputService.onProviderAndIdCheck(form.value.value)
   }
 }
