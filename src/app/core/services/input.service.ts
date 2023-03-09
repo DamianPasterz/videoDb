@@ -12,20 +12,20 @@ export class InputService {
   public onProviderAndIdCheck(url:string): InputData {
     let inputData: InputData = { provider: VideoServices.incorect, id: null }
 
-    if(url.includes(VideoServices.vimeo) || url.match(VIMEO_ID_CHECK) ){
-      return inputData = {provider: VideoServices.vimeo, id: url.match(VIMEO_ID_CHECK)![1]}
+    if (url.includes(VideoServices.vimeo) || url.match(VIMEO_ID_CHECK)) {
+      return inputData = { provider: VideoServices.vimeo, id: url.match(VIMEO_ID_CHECK)![1] }
     }
 
-    if(url.includes(VideoServices.youtube) || url.match(YOUTUBE_ID_CHECK) ){
-      return inputData = {provider: VideoServices.youtube, id: url.match(YOUTUBE_ID_CHECK)![1]}
+    if (url.includes(VideoServices.youtube) || url.match(YOUTUBE_ID_CHECK)) {
+      return inputData = { provider: VideoServices.youtube, id: url.match(YOUTUBE_ID_CHECK)![1] }
     }
 
-    if(url.length === machingPiont.vimeoIDLength || url.match(VIMEO_ONLY_ID_CHECK) ){
-      return inputData = {provider: VideoServices.vimeo, id: url.match(VIMEO_ONLY_ID_CHECK)![0]}
+    if (url.length === machingPiont.vimeoIDLength || url.match(VIMEO_ONLY_ID_CHECK)) {
+      return inputData = { provider: VideoServices.vimeo, id: url.match(VIMEO_ONLY_ID_CHECK)![0] }
     }
 
-    if(url.length >= machingPiont.youtubeIDLength || url.match(YOUTUBE_ONLY_ID_CHECK) ){
-      return inputData = {provider: VideoServices.youtube, id: url.match(YOUTUBE_ONLY_ID_CHECK)![0]}
+    if (url.length >= machingPiont.youtubeIDLength || url.match(YOUTUBE_ONLY_ID_CHECK)) {
+      return inputData = { provider: VideoServices.youtube, id: url.match(YOUTUBE_ONLY_ID_CHECK)![0] }
     }
     
     return inputData

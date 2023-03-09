@@ -13,12 +13,12 @@ export class SearchBarComponent implements OnInit {
   public showValidateErrors: boolean
   public minInput = machingPiont.minInput
   
-  constructor(private inputService: InputService){}
+  constructor(private inputService: InputService) {}
 
-  public ngOnInit():void {}
-  
-  public onAddVideo(form: NgForm){
-    if(form.invalid) this.showValidateErrors = true
+  public ngOnInit(): void {}
+
+  public onAddVideo(form: NgForm) {
+    if (form.invalid) this.showValidateErrors = true
     const videoData = this.inputService.onProviderAndIdCheck(form.value.value)
   }
 }
