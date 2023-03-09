@@ -7,4 +7,3 @@ export interface Video  {
   img: string;
   viewCount: string;
 };
-
