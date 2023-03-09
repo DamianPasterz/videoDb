@@ -8,18 +8,26 @@ import { MaterialModule } from './material.module';
 import { StoreModule } from '@ngrx/store';
 import { FavouriteBarComponent } from './favourite-bar/favourite-bar.component';
 import { HomeComponent } from './home/home.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { VideosContanierComponent } from './videos-contanier/videos-contanier.component';
+import { VideosItemComponent } from './videos-item/videos-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     FavouriteBarComponent,
-    HomeComponent
+    HomeComponent,
+    SearchBarComponent,
+    VideosContanierComponent,
+    VideosItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
     StoreModule.forRoot({}, {})
   ],
   providers: [],
