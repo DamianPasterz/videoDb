@@ -1,4 +1,4 @@
 export interface InputData {
   provider: string,
-  id: string
+  id: string | null
 }
