@@ -10,19 +10,9 @@ import { FavouriteBarComponent } from './favourite-bar/favourite-bar.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FavouriteBarComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    StoreModule.forRoot({}, {})
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, FavouriteBarComponent, HomeComponent],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, StoreModule.forRoot({}, {})],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
