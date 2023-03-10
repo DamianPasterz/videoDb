@@ -14,23 +14,23 @@ import { VideosContanierComponent } from './videos-contanier/videos-contanier.co
 import { VideosItemComponent } from './videos-item/videos-item.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FavouriteBarComponent,
-    HomeComponent,
-    SearchBarComponent,
-    VideosContanierComponent,
-    VideosItemComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FormsModule,
-    StoreModule.forRoot({}, {})
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		FavouriteBarComponent,
+		HomeComponent,
+		SearchBarComponent,
+		VideosContanierComponent,
+		VideosItemComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MaterialModule,
+		FormsModule,
+		StoreModule.forRoot({}, {}),
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
