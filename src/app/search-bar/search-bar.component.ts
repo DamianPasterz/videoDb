@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { machingPiont } from '@core/models/matching.models';
+import { minInput } from '@core/models/matching.models';
 import { InputService } from '@core/services/input.service';
 
 @Component({
@@ -9,16 +9,14 @@ import { InputService } from '@core/services/input.service';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
-  public showValidateErrors: boolean
-  public minInput = machingPiont.minInput
+export class SearchBarComponent {
+  public isValidationErrorVisible : boolean
+  public minInput = minInput
   
   constructor(private inputService: InputService) {}
 
-  public ngOnInit(): void {}
-
   public onAddVideo(form: NgForm) {
-    if (form.invalid) this.showValidateErrors = true
+    if (form.invalid) this.isValidationErrorVisible  = true
     const videoData = this.inputService.onProviderAndIdCheck(form.value.value)
   }
 }

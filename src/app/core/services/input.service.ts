@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { machingPiont, VIMEO_ID_CHECK, VIMEO_ONLY_ID_CHECK, YOUTUBE_ID_CHECK, YOUTUBE_ONLY_ID_CHECK } from '@core/models/matching.models';
+import { vimeoIDLength, VIMEO_ID_CHECK, VIMEO_ONLY_ID_CHECK, youtubeIDLength, YOUTUBE_ID_CHECK, YOUTUBE_ONLY_ID_CHECK } from '@core/models/matching.models';
 import { InputData } from '@core/models/input.model';
 import { VideoServices } from '@core/models/videoServices.model';
 
@@ -20,11 +20,11 @@ export class InputService {
       return inputData = { provider: VideoServices.youtube, id: url.match(YOUTUBE_ID_CHECK)![1] }
     }
 
-    if (url.length === machingPiont.vimeoIDLength || url.match(VIMEO_ONLY_ID_CHECK)) {
+    if (url.length === vimeoIDLength || url.match(VIMEO_ONLY_ID_CHECK)) {
       return inputData = { provider: VideoServices.vimeo, id: url.match(VIMEO_ONLY_ID_CHECK)![0] }
     }
 
-    if (url.length >= machingPiont.youtubeIDLength || url.match(YOUTUBE_ONLY_ID_CHECK)) {
+    if (url.length >= youtubeIDLength || url.match(YOUTUBE_ONLY_ID_CHECK)) {
       return inputData = { provider: VideoServices.youtube, id: url.match(YOUTUBE_ONLY_ID_CHECK)![0] }
     }
     

@@ -11,6 +11,6 @@
 				[minlength]="minInput" />
 			<button type="submit" class="search-bar__button">add</button>
 		</form>
-		<p class="search-bar__alert" *ngIf="inputUrlField.invalid && showValidateErrors">Required field</p>
+		<p class="search-bar__alert" *ngIf="inputUrlField.invalid && isValidationErrorVisible">Required field</p>
 	</div>
 </mat-toolbar>

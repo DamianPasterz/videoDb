@@ -1,5 +1,7 @@
+import { VideoServices } from "./videoServices.model";
+
 export interface Video  {
-  platform: string;
+  provider: VideoServices;
   favorite: boolean;
   date: Date | string;
   videoId: string;
