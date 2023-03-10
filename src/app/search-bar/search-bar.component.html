@@ -1,0 +1,16 @@
+<mat-toolbar class="search-bar">
+	<div>
+		<form #form="ngForm" (ngSubmit)="onAddVideo(form)">
+			<input
+				ngModel
+				#inputUrlField="ngModel"
+				class="search-bar__input"
+				type="text"
+				name="value"
+				required
+				[minlength]="minInput" />
+			<button type="submit" class="search-bar__button">add</button>
+		</form>
+		<p class="search-bar__alert" *ngIf="inputUrlField.invalid && isValidationErrorVisible">Required field</p>
+	</div>
+</mat-toolbar>
