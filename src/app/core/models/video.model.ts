@@ -1,11 +1,12 @@
-import { VideoServices } from "./videoServices.model";
+import { VideoServices } from './videoServices.model';
 
-export interface Video  {
-  provider: VideoServices;
-  favorite: boolean;
-  date: Date | string;
-  videoId: string;
-  title: string;
-  img: string;
-  viewCount: string;
-};
+export class Video {
+	constructor(
+		public provider: VideoServices,
+		public favorite = false,
+		public videoId?: string | number,
+		public title = 'test',
+		public img = 'test',
+		public viewCount = 0,
+	) {}
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { VideosItemComponent } from './videos-item/videos-item.component';
 		MaterialModule,
 		FormsModule,
 		StoreModule.forRoot({}, {}),
+		HttpClientModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

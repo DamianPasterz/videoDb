@@ -1,5 +1,5 @@
 export enum VideoServices {
-  youtube = 'youtube',
-  vimeo = 'vimeo',
-  incorect = 'incorect'
+	youtube = 'youtube',
+	vimeo = 'vimeo',
+	incorect = 'incorect',
 }

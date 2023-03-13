@@ -1,7 +1,11 @@
 .videos-contanier {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   width: 80vw;
   height: 600px;
   margin-top: 45px;
   background-color: orangered;
   padding: 15px;
+  flex-wrap: wrap;
 }
