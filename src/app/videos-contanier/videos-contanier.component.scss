@@ -3,17 +3,32 @@
 .videos {
   border: none;
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   width: 80vw;
   height: 600px;
-  margin-top: 45px;
+  margin-top: 25px;
   background-color: gray;
   padding: 5px;
-  flex-wrap: wrap;
   box-shadow: none;
+ 
+
+  &__contanier {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: none;
+  }
 
   &__paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin-top: 25px;
     background-color: $grean2;
+    height: 60px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(89, 86, 43, 1);
   }
 }

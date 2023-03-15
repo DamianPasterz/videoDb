@@ -1,14 +1,21 @@
+@import 'styles';
+
 .video-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 15px;
   width: 210px;
-  height: 300px;
+  height: 250px;
   padding: 5px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   margin-right: 25px;
   background-color:rgba(135, 140, 2, 1);
+  
+  &:hover {
+    box-shadow: 5px 5px 10px $grean1;
+  }
+    
 
   & > img {
     width: 180px;
