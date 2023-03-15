@@ -12,7 +12,7 @@ export class NewVideoService {
 		this.item = {
 			title: data.title,
 			provider: VideoServices.vimeo,
-			favorite: false,
+			favourite: false,
 			videoId: data.video_id,
 			img: data.thumbnail_url,
 			viewCount: 0,
@@ -24,7 +24,7 @@ export class NewVideoService {
 		this.item = {
 			title: data.items[0].snippet.title,
 			provider: VideoServices.youtube,
-			favorite: false,
+			favourite: false,
 			videoId: data.items[0].id,
 			img: data.items[0].snippet.thumbnails.default.url,
 			viewCount: Number(data.items[0].statistics.viewCount),

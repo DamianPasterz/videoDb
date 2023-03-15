@@ -3,10 +3,10 @@
 	<mat-card-title class="video-item__title">{{ video.title }}</mat-card-title>
 	<mat-card-content>
 		<mat-card-subtitle>views: {{ video.viewCount }}</mat-card-subtitle>
-		<mat-card-subtitle>data: {{ video.createdDate }} </mat-card-subtitle>
+		<mat-card-subtitle>data: {{ video.createdDate | date }} </mat-card-subtitle>
 	</mat-card-content>
 	<mat-card-actions class="video-item__actions">
-		<mat-card-subtitle (click)="toogleFavorite()">like: {{ video.favorite }}</mat-card-subtitle>
+		<mat-card-subtitle (click)="toogleFavorite()">like: {{ video.favourite }}</mat-card-subtitle>
 		<i class="material-icons" (click)="onClickVideo(index)">delete</i>
 	</mat-card-actions>
 </mat-card>

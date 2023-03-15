@@ -4,6 +4,7 @@ import { LocalStorageService } from './local-store.service';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 import { NewVideoService } from './new-video.service';
+import demo from 'tools/demo';
 
 @Injectable({
 	providedIn: 'root',
@@ -32,7 +33,7 @@ export class VideosListService {
 	toogleFavorite(id: number | string) {
 		const videosToLove = this.videos.map(item => {
 			if (item.videoId === id) {
-				item.favorite = !item.favorite;
+				item.favourite = !item.favourite;
 			}
 			return item;
 		});
@@ -40,5 +41,16 @@ export class VideosListService {
 
 		this.videosBehaviorSubject.next(videosToLove);
 		this.localStorageService.saveToLocalStorage(videosToLove);
+	}
+
+	deleteAllVideos() {
+		this.videosBehaviorSubject.next([]);
+		this.localStorageService.saveToLocalStorage([]);
+	}
+
+	addDemoList() {
+		this.videos = demo;
+		this.videosBehaviorSubject.next(demo);
+		this.localStorageService.saveToLocalStorage(demo);
 	}
 }

@@ -1,4 +1,5 @@
 .favorite {
+  height: 40px;
     margin-top: 15px;
     display: flex;
     justify-content: center;
@@ -7,12 +8,21 @@
     border-radius: 16px;
     border: 2px solid rgba(242,234,118,1); ;
     background-color: rgba(135,140,2,1);
-    padding: 15px;
+    padding: 5px 15px;
+    box-shadow: 5px 5px 10px black;
 
   &__btn {
-    text-align: center;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
     border: none;
-    background-color: white;
+    border-radius:10px;
+    font-weight: bold;
+    background: var(--Green1);
+        &:hover {
+            border-radius: 10px;
+            color:  white;
+        }
   }
   
   &__example-spacer {

@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VideosContanierComponent } from './videos-contanier/videos-contanier.component';
 import { VideosItemComponent } from './video-item/video-item.component';
+import { SortBarComponent } from './sort-bar/sort-bar.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { VideosItemComponent } from './video-item/video-item.component';
 		SearchBarComponent,
 		VideosContanierComponent,
 		VideosItemComponent,
+		SortBarComponent,
 	],
 	imports: [
 		BrowserModule,
