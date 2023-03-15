@@ -17,6 +17,8 @@ import { VideoServices } from '@core/models/videoServices.model';
 })
 export class InputService {
 	public onProviderAndIdCheck(url: string): InputData {
+		console.log(url);
+
 		let inputData: InputData = { provider: VideoServices.incorect, id: null };
 
 		if (url.includes(VideoServices.vimeo) || url.match(VIMEO_ID_CHECK)) {

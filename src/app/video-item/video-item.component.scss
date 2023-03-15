@@ -1,0 +1,38 @@
+.video-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  width: 210px;
+  height: 300px;
+  padding: 5px;
+  margin-top: 15px;
+  margin-right: 25px;
+  background-color:rgba(135, 140, 2, 1);
+
+  & > img {
+    width: 180px;
+    height: 120px;
+    border: 1px solid rgba(242, 234, 118, 1);
+    box-shadow: 5px 5px 15px rgba(89, 86, 43, 1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+&__title {
+  display: block;
+  width: 180px;
+  white-space: nowrap ;
+  overflow: hidden;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+}
+
+&__actions {
+display: flex;
+justify-content: left;
+align-items: left;
+flex-direction: column;
+}
+}

@@ -12,7 +12,7 @@ import { FavouriteBarComponent } from './favourite-bar/favourite-bar.component';
 import { HomeComponent } from './home/home.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VideosContanierComponent } from './videos-contanier/videos-contanier.component';
-import { VideosItemComponent } from './videos-item/videos-item.component';
+import { VideosItemComponent } from './video-item/video-item.component';
 
 @NgModule({
 	declarations: [

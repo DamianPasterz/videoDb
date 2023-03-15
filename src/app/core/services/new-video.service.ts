@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { VimeoResponse } from '@core/models/video-response.model';
+import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.model';
 import { Video } from '@core/models/video.model';
 import { VideoServices } from '@core/models/videoServices.model';
 
@@ -16,6 +16,19 @@ export class NewVideoService {
 			videoId: data.video_id,
 			img: data.thumbnail_url,
 			viewCount: 0,
+			createdDate: new Date(),
+		};
+		return this.item;
+	}
+	createNewYouTubeItem(data: YouTubeResponse): Video {
+		this.item = {
+			title: data.items[0].snippet.title,
+			provider: VideoServices.youtube,
+			favorite: false,
+			videoId: data.items[0].id,
+			img: data.items[0].snippet.thumbnails.default.url,
+			viewCount: Number(data.items[0].statistics.viewCount),
+			createdDate: new Date(),
 		};
 		return this.item;
 	}

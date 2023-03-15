@@ -1,3 +1,14 @@
-<mat-card class="videos-contanier">
-	<app-videos-item *ngFor="let video of videos" [video]="video"> </app-videos-item>
+<mat-card class="videos">
+	<app-video-item
+		*ngFor="let video of videos$ | async | slice : firstPage : secondPage; let index = index"
+		[video]="video"
+		[index]="index"></app-video-item>
+	<mat-paginator
+		class="videos__paginator"
+		#paginator
+		[length]="(videos$ | async).length"
+		[pageSize]="pageSize"
+		[pageSizeOptions]="pageSizeOptions"
+		(page)="pageEvent = setPaginator($event)">
+	</mat-paginator>
 </mat-card>

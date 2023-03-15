@@ -6,7 +6,7 @@ import { VideoServices } from '@core/models/videoServices.model';
 import { VimeoService as HttpService } from '@core/services/http.service';
 import { InputService } from '@core/services/input.service';
 import { Video } from '@core/models/video.model';
-import { VimeoResponse } from '@core/models/video-response.model';
+import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.model';
 import { NewVideoService } from '@core/services/new-video.service';
 import { VideosListService } from '@core/services/videos-list.service';
 
@@ -34,6 +34,12 @@ export class SearchBarComponent {
 		if (inputData.provider === VideoServices.vimeo) {
 			this.httpService.getVimeoData(inputData.id).subscribe((date: VimeoResponse) => {
 				newVideo = this.newVideoService.createNewViemoItem(date);
+				this.videoListService.adVideo(newVideo);
+			});
+		}
+		if (inputData.provider === VideoServices.youtube) {
+			this.httpService.getYouTubeData(inputData.id).subscribe((date: YouTubeResponse) => {
+				newVideo = this.newVideoService.createNewYouTubeItem(date);
 				this.videoListService.adVideo(newVideo);
 			});
 		}

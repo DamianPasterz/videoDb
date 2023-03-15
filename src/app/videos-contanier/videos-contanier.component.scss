@@ -1,11 +1,19 @@
-.videos-contanier {
+@import "styles";
+
+.videos {
+  border: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   width: 80vw;
   height: 600px;
   margin-top: 45px;
-  background-color: orangered;
-  padding: 15px;
+  background-color: gray;
+  padding: 5px;
   flex-wrap: wrap;
+  box-shadow: none;
+
+  &__paginator {
+    background-color: $grean2;
+  }
 }
