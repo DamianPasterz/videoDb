@@ -1,14 +1,21 @@
 <mat-card class="videos">
 	<div class="videos__contanier">
 		<app-video-item
-			*ngFor="let video of videos$ | async | slice : firstPage : secondPage; let index = index"
+			*ngFor="
+				let video of videos$
+					| async
+					| filterFavorite : (favourite$ | async)
+					| sort : (sortVideos$ | async)
+					| slice : firstPage : secondPage;
+				let index = index
+			"
 			[video]="video"
 			[index]="index"></app-video-item>
 	</div>
 	<mat-paginator
 		class="videos__paginator"
 		#paginator
-		[length]="(videos$ | async).length"
+		[length]="(videos$ | async | filterFavorite : (favourite$ | async)).length"
 		[pageSize]="pageSize"
 		[pageSizeOptions]="pageSizeOptions"
 		(page)="pageEvent = setPaginator($event)">

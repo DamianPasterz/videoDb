@@ -6,7 +6,12 @@
 		<mat-card-subtitle>data: {{ video.createdDate | date }} </mat-card-subtitle>
 	</mat-card-content>
 	<mat-card-actions class="video-item__actions">
-		<mat-card-subtitle (click)="toogleFavorite()">like: {{ video.favourite }}</mat-card-subtitle>
-		<i class="material-icons" (click)="onClickVideo(index)">delete</i>
+		<mat-icon
+			class="video-item__actions__icon"
+			(click)="toogleFavorite()"
+			[ngStyle]="{ color: video.favourite ? 'white' : '' }"
+			>favorite</mat-icon
+		>
+		<mat-icon class="video-item__actions__icon" (click)="onClickVideo(index)">delete</mat-icon>
 	</mat-card-actions>
 </mat-card>

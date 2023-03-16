@@ -1,11 +1,11 @@
 <mat-toolbar class="favorite">
 	<span class="favorite__logo">Vidoe-db</span>
 	<span class="favorite__example-spacer"></span>
-	<button mat-icon-button class="favorite__btn">
+	<button mat-icon-button class="favorite__btn" (click)="onFavourite()">
 		favorite
 		<mat-icon>favorite</mat-icon>
 	</button>
-	<button mat-icon-button class="favorite__btn">
+	<button mat-icon-button class="favorite__btn" (click)="onAllVideos()">
 		all
 		<mat-icon></mat-icon>
 	</button>

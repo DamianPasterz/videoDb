@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VideosSort } from '@core/models/vidoes-sort.model';
 import { VideosListService } from '@core/services/videos-list.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { VideosListService } from '@core/services/videos-list.service';
 	styleUrls: ['./sort-bar.component.scss'],
 })
 export class SortBarComponent {
+	VideosSort: VideosSort;
 	constructor(public videosListService: VideosListService) {}
 
 	onDeleteAll() {
@@ -15,5 +17,12 @@ export class SortBarComponent {
 
 	onDemoLoad() {
 		this.videosListService.addDemoList();
+	}
+
+	onFromOldToNew() {
+		this.videosListService.getSortVideos(VideosSort.fromOldToNew);
+	}
+	onFromNewToOld() {
+		this.videosListService.getSortVideos(VideosSort.fromNewToOld);
 	}
 }

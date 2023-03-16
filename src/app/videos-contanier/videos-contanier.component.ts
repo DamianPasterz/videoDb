@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Video } from '@core/models/video.model';
+import { VideosSort } from '@core/models/vidoes-sort.model';
 import { VideosListService } from '@core/services/videos-list.service';
 import { Observable } from 'rxjs';
 
@@ -11,6 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class VideosContanierComponent implements OnInit {
 	public videos$: Observable<Video[]>;
+	public favourite$: Observable<boolean>;
+	public sortVideos$: Observable<VideosSort>;
 
 	protected videosList: Video[] = [];
 	protected pageIndex = 0;
@@ -22,6 +25,8 @@ export class VideosContanierComponent implements OnInit {
 
 	constructor(private videoListService: VideosListService) {
 		this.videos$ = this.videoListService.videos$;
+		this.favourite$ = this.videoListService.favourite$;
+		this.sortVideos$ = this.videoListService.sortVideos$;
 	}
 
 	public ngOnInit(): void {

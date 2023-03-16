@@ -14,6 +14,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VideosContanierComponent } from './videos-contanier/videos-contanier.component';
 import { VideosItemComponent } from './video-item/video-item.component';
 import { SortBarComponent } from './sort-bar/sort-bar.component';
+import { FilterFavoritePipe } from './videos-contanier/filter-favorite.pipe';
+import { SortPipe } from './videos-contanier/sort.pipe';
 
 @NgModule({
 	declarations: [
@@ -24,6 +26,8 @@ import { SortBarComponent } from './sort-bar/sort-bar.component';
 		VideosContanierComponent,
 		VideosItemComponent,
 		SortBarComponent,
+  FilterFavoritePipe,
+  SortPipe,
 	],
 	imports: [
 		BrowserModule,
