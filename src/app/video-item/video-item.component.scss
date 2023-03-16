@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // flex-direction: row;
   border-radius: 15px;
   width: 210px;
   height: 250px;
@@ -56,6 +55,14 @@
 .list{
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 60%;
   height: min-content;
+}
+
+.title__list {
+  margin-left: 15px;
+}
+
+.content__list {
+  width: 350px;
 }

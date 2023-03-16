@@ -1,7 +1,9 @@
 <mat-card class="video-item" [ngClass]="{ list: (grid$ | async) === false }">
 	<img mat-card-image [src]="video.img" alt="Video image" />
-	<mat-card-title class="video-item__title">{{ video.title }}</mat-card-title>
-	<mat-card-content>
+	<mat-card-title class="video-item__title" [ngClass]="{ title__list: (grid$ | async) === false }">{{
+		video.title
+	}}</mat-card-title>
+	<mat-card-content [ngClass]="{ content__list: (grid$ | async) === false }">
 		<mat-card-subtitle>views: {{ video.viewCount }}</mat-card-subtitle>
 		<mat-card-subtitle>data: {{ video.createdDate | date }} </mat-card-subtitle>
 	</mat-card-content>
