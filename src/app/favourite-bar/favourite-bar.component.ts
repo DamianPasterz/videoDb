@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';
 
 @Component({
@@ -7,13 +8,13 @@ import { VideosListService } from '@core/services/videos-list.service';
 	styleUrls: ['./favourite-bar.component.scss'],
 })
 export class FavouriteBarComponent {
-	constructor(public videosListService: VideosListService) {}
+	constructor(public videosListService: VideosListService, public displayDataService: DisplayDataService) {}
 
 	onFavourite() {
-		this.videosListService.getFavourite();
+		this.displayDataService.getFavourite();
 	}
 
 	onAllVideos() {
-		this.videosListService.getAllVideos();
+		this.displayDataService.getAllVideos();
 	}
 }

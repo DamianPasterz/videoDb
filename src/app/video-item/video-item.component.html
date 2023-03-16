@@ -1,4 +1,4 @@
-<mat-card class="video-item">
+<mat-card class="video-item" [ngClass]="{ list: (grid$ | async) === false }">
 	<img mat-card-image [src]="video.img" alt="Video image" />
 	<mat-card-title class="video-item__title">{{ video.title }}</mat-card-title>
 	<mat-card-content>
@@ -6,12 +6,9 @@
 		<mat-card-subtitle>data: {{ video.createdDate | date }} </mat-card-subtitle>
 	</mat-card-content>
 	<mat-card-actions class="video-item__actions">
-		<mat-icon
-			class="video-item__actions__icon"
-			(click)="toogleFavorite()"
-			[ngStyle]="{ color: video.favourite ? 'white' : '' }"
+		<mat-icon class="video-item__icon" (click)="toogleFavorite()" [ngStyle]="{ color: video.favourite ? 'white' : '' }"
 			>favorite</mat-icon
 		>
-		<mat-icon class="video-item__actions__icon" (click)="onClickVideo(index)">delete</mat-icon>
+		<mat-icon class="video-item__icon" (click)="onClickVideo(index)">delete</mat-icon>
 	</mat-card-actions>
 </mat-card>

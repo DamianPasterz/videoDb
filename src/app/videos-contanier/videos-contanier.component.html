@@ -1,5 +1,5 @@
 <mat-card class="videos">
-	<div class="videos__contanier">
+	<div class="videos__contanier" [ngStyle]="{ flexDirection: (grid$ | async) ? 'row' : 'column' }">
 		<app-video-item
 			*ngFor="
 				let video of videos$
@@ -17,7 +17,6 @@
 		#paginator
 		[length]="(videos$ | async | filterFavorite : (favourite$ | async)).length"
 		[pageSize]="pageSize"
-		[pageSizeOptions]="pageSizeOptions"
 		(page)="pageEvent = setPaginator($event)">
 	</mat-paginator>
 </mat-card>

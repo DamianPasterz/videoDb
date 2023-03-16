@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VideosSort } from '@core/models/vidoes-sort.model';
+import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';
 
 @Component({
@@ -8,8 +9,7 @@ import { VideosListService } from '@core/services/videos-list.service';
 	styleUrls: ['./sort-bar.component.scss'],
 })
 export class SortBarComponent {
-	VideosSort: VideosSort;
-	constructor(public videosListService: VideosListService) {}
+	constructor(public videosListService: VideosListService, public displayDataService: DisplayDataService) {}
 
 	onDeleteAll() {
 		this.videosListService.deleteAllVideos();
@@ -20,16 +20,23 @@ export class SortBarComponent {
 	}
 
 	onFromOldToNew() {
-		this.videosListService.getSortVideos(VideosSort.fromOldToNew);
+		this.displayDataService.getSortVideos(VideosSort.fromOldToNew);
 	}
 	onFromNewToOld() {
-		this.videosListService.getSortVideos(VideosSort.fromNewToOld);
+		this.displayDataService.getSortVideos(VideosSort.fromNewToOld);
 	}
 
 	onFromAToZ() {
-		this.videosListService.getSortVideos(VideosSort.fromAtoZ);
+		this.displayDataService.getSortVideos(VideosSort.fromAtoZ);
 	}
 	onFromZToA() {
-		this.videosListService.getSortVideos(VideosSort.fromZtoA);
+		this.displayDataService.getSortVideos(VideosSort.fromZtoA);
+	}
+
+	onDisplayGrid() {
+		this.displayDataService.displayGrid();
+	}
+	onDisplayList() {
+		this.displayDataService.displayList();
 	}
 }

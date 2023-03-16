@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const material = [
 	MatToolbarModule,
@@ -15,6 +16,7 @@ const material = [
 	MatDialogModule,
 	MatPaginatorModule,
 	MatMenuModule,
+	MatGridListModule,
 ];
 
 @NgModule({

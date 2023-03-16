@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Observable } from 'rxjs';
+
 import { Video } from '@core/models/video.model';
 import { VideosSort } from '@core/models/vidoes-sort.model';
+import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';
-import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-videos-contanier',
@@ -14,19 +16,20 @@ export class VideosContanierComponent implements OnInit {
 	public videos$: Observable<Video[]>;
 	public favourite$: Observable<boolean>;
 	public sortVideos$: Observable<VideosSort>;
+	public grid$: Observable<boolean>;
 
 	protected videosList: Video[] = [];
 	protected pageIndex = 0;
-	protected pageSize = 9;
+	protected pageSize = 6;
 	protected firstPage = this.pageIndex * this.pageSize;
 	protected secondPage = (this.pageIndex + 1) * this.pageSize;
-	protected pageSizeOptions = [2, 18, 27];
 	protected pageEvent: PageEvent;
 
-	constructor(private videoListService: VideosListService) {
+	constructor(private videoListService: VideosListService, public displayDataService: DisplayDataService) {
 		this.videos$ = this.videoListService.videos$;
-		this.favourite$ = this.videoListService.favourite$;
-		this.sortVideos$ = this.videoListService.sortVideos$;
+		this.favourite$ = this.displayDataService.favourite$;
+		this.sortVideos$ = this.displayDataService.sortVideos$;
+		this.grid$ = this.displayDataService.grid$;
 	}
 
 	public ngOnInit(): void {
