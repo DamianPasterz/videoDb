@@ -16,7 +16,15 @@
     justify-content: space-around;
     align-items: center;
     margin-left: 15px;
+
+    &__menu {
     
+      &__button {
+        margin: 0;
+        padding: 0;
+        background-color:rgba(135,140,2,1);
+      }
+    }
 
     &__button {
       display: flex;
@@ -48,9 +56,7 @@
         color: white;
       }
     }
-    &__menu {
-      background-color: rgba(135,140,2,1);
-    }
+   
   }
 
 

@@ -25,4 +25,11 @@ export class SortBarComponent {
 	onFromNewToOld() {
 		this.videosListService.getSortVideos(VideosSort.fromNewToOld);
 	}
+
+	onFromAToZ() {
+		this.videosListService.getSortVideos(VideosSort.fromAtoZ);
+	}
+	onFromZToA() {
+		this.videosListService.getSortVideos(VideosSort.fromZtoA);
+	}
 }

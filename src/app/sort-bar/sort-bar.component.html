@@ -7,9 +7,17 @@
 		</button>
 	</div>
 	<div class="sort__action">
-		<button class="sort__action__button" mat-menu-item (click)="onFromOldToNew()">od najstarszych</button>
-		<button class="sort__action__button" mat-menu-item (click)="onFromNewToOld()">od najnowszych</button>
+		<button mat-icon-button [matMenuTriggerFor]="menu" class="sort__action__button">
+			<mat-icon>sort</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu" class="sort__action__menu">
+			<button class="sort__action__menu__button" mat-menu-item (click)="onFromOldToNew()">from old</button>
+			<button class="sort__action__menu__button" mat-menu-item (click)="onFromNewToOld()">from new</button>
+			<button class="sort__action__menu__button" mat-menu-item (click)="onFromAToZ()">from A to Z</button>
+			<button class="sort__action__menu__button" mat-menu-item (click)="onFromZToA()">from Z to A</button>
+		</mat-menu>
 	</div>
+
 	<div class="sort__action">
 		<mat-icon class="sort__action__icon">list</mat-icon>
 		<mat-icon class="sort__action__icon">view_module</mat-icon>

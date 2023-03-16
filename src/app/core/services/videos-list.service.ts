@@ -72,8 +72,6 @@ export class VideosListService {
 	}
 
 	public getSortVideos(sort: VideosSort) {
-		console.log(sort);
-
 		this.sortVideosBehaviorSubject.next(sort);
 	}
 }
