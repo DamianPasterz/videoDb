@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.model';
 import { Video } from '@core/models/video.model';
 import { VideoServices } from '@core/models/videoServices.model';
@@ -8,7 +9,8 @@ import { VideoServices } from '@core/models/videoServices.model';
 })
 export class NewVideoService {
 	public item: Video;
-	createNewViemoItem(data: VimeoResponse): Video {
+
+	public createNewViemoItem(data: VimeoResponse): Video {
 		this.item = {
 			title: data.title,
 			provider: VideoServices.vimeo,
@@ -20,7 +22,7 @@ export class NewVideoService {
 		};
 		return this.item;
 	}
-	createNewYouTubeItem(data: YouTubeResponse): Video {
+	public createNewYouTubeItem(data: YouTubeResponse): Video {
 		this.item = {
 			title: data.items[0].snippet.title,
 			provider: VideoServices.youtube,

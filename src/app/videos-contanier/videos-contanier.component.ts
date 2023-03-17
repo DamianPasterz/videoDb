@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { Video } from '@core/models/video.model';
 import { VideosSort } from '@core/models/vidoes-sort.model';
 
 import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';
+import { finalize } from 'rxjs';
 
 @Component({
 	selector: 'app-videos-contanier',
 	templateUrl: './videos-contanier.component.html',
 	styleUrls: ['./videos-contanier.component.scss'],
 })
-export class VideosContanierComponent implements OnInit {
+export class VideosContanierComponent implements OnInit, OnDestroy {
 	public videos$: Observable<Video[]>;
 	public favourite$: Observable<boolean>;
 	public sortVideos$: Observable<VideosSort>;
@@ -25,6 +27,7 @@ export class VideosContanierComponent implements OnInit {
 	protected firstPage = this.pageIndex * this.pageSize;
 	protected secondPage = (this.pageIndex + 1) * this.pageSize;
 	protected pageEvent: PageEvent;
+	protected subscription: Subscription;
 
 	constructor(private videoListService: VideosListService, public displayDataService: DisplayDataService) {
 		this.videos$ = this.videoListService.videos$;
@@ -34,7 +37,7 @@ export class VideosContanierComponent implements OnInit {
 	}
 
 	public ngOnInit(): void {
-		this.videoListService.videos$.subscribe(item => (this.videosList = item));
+		this.subscription = this.videoListService.videos$.subscribe(item => (this.videosList = item));
 		this.pageEvent = {
 			pageIndex: this.pageIndex,
 			pageSize: this.pageSize,
@@ -45,5 +48,9 @@ export class VideosContanierComponent implements OnInit {
 		this.firstPage = pageEvent.pageIndex * pageEvent.pageSize;
 		this.secondPage = (pageEvent.pageIndex + 1) * pageEvent.pageSize;
 		return pageEvent;
+	}
+
+	ngOnDestroy(): void {
+		this.subscription.unsubscribe();
 	}
 }

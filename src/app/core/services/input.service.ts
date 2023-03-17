@@ -10,15 +10,12 @@ import {
 } from '@core/models/matching.models';
 import { InputData } from '@core/models/input.model';
 import { VideoServices } from '@core/models/videoServices.model';
-// import { Video } from '@core/models/video.model';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class InputService {
 	public onProviderAndIdCheck(url: string): InputData {
-		console.log(url);
-
 		let inputData: InputData = { provider: VideoServices.incorect, id: null };
 
 		if (url.includes(VideoServices.vimeo) || url.match(VIMEO_ID_CHECK)) {

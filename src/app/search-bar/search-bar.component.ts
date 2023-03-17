@@ -36,12 +36,14 @@ export class SearchBarComponent {
 				newVideo = this.newVideoService.createNewViemoItem(date);
 				this.videoListService.adVideo(newVideo);
 			});
+			return;
 		}
 		if (inputData.provider === VideoServices.youtube) {
 			this.httpService.getYouTubeData(inputData.id).subscribe((date: YouTubeResponse) => {
 				newVideo = this.newVideoService.createNewYouTubeItem(date);
 				this.videoListService.adVideo(newVideo);
 			});
+			return;
 		}
 	}
 }

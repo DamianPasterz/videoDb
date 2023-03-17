@@ -1,15 +1,17 @@
+@import 'styles';
+
 .favorite {
   height: 40px;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    border-radius: 16px;
-    border: 2px solid rgba(242,234,118,1); ;
-    background-color: rgba(135,140,2,1);
-    padding: 5px 15px;
-    box-shadow: 5px 5px 10px black;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  border-radius: 16px;
+  border: 2px solid $green1;
+  background-color: $green2;
+  padding: 5px 15px;
+  box-shadow: 5px 5px 10px black;
 
   &__btn {
     width: 120px;
@@ -18,11 +20,12 @@
     border: none;
     border-radius:10px;
     font-weight: bold;
-    background: var(--Green1);
-        &:hover {
-            border-radius: 10px;
-            color:  white;
-        }
+    background-color: $green2;
+
+    &:hover {
+      border-radius: 10px;
+      color:  white;
+    }
   }
   
   &__example-spacer {

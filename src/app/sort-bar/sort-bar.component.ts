@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { VideosSort } from '@core/models/vidoes-sort.model';
 import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';

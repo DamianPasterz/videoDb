@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Video } from '@core/models/video.model';
@@ -10,21 +10,23 @@ import { DisplayDataService } from '@core/services/display-data.service';
 	templateUrl: './video-item.component.html',
 	styleUrls: ['./video-item.component.scss'],
 })
-export class VideosItemComponent {
+export class VideosItemComponent implements OnInit {
 	public grid$: Observable<boolean>;
 
 	@Input() video: Video;
 	@Input() index: number;
 
-	constructor(public videosListService: VideosListService, public displayDataService: DisplayDataService) {
+	constructor(public videosListService: VideosListService, public displayDataService: DisplayDataService) {}
+
+	public ngOnInit(): void {
 		this.grid$ = this.displayDataService.grid$;
 	}
 
-	toogleFavorite() {
+	public toogleFavorite(): void {
 		this.videosListService.toogleFavorite(this.video.videoId);
 	}
 
-	onClickVideo(index: number) {
+	public onClickVideo(index: number): void {
 		this.videosListService.deleteVideo(index);
 	}
 }

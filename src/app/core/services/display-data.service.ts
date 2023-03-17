@@ -16,11 +16,11 @@ export class DisplayDataService {
 	public gridBehaviorSubject = new BehaviorSubject<boolean>(true);
 	public grid$: Observable<boolean> = this.gridBehaviorSubject.asObservable();
 
-	public getFavourite() {
+	public getFavourite(): void {
 		this.favouriteBehaviorSubject.next(true);
 	}
 
-	public getAllVideos() {
+	public getAllVideos(): void {
 		this.favouriteBehaviorSubject.next(false);
 	}
 
@@ -28,10 +28,10 @@ export class DisplayDataService {
 		this.sortVideosBehaviorSubject.next(sort);
 	}
 
-	public displayGrid() {
+	public displayGrid(): void {
 		this.gridBehaviorSubject.next(true);
 	}
-	public displayList() {
+	public displayList(): void {
 		this.gridBehaviorSubject.next(false);
 	}
 }
