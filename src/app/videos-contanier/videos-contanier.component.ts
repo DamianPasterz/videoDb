@@ -1,14 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { Observable } from 'rxjs';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { Video } from '@core/models/video.model';
 import { VideosSort } from '@core/models/vidoes-sort.model';
 
 import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';
-import { finalize } from 'rxjs';
 
 @Component({
 	selector: 'app-videos-contanier',
