@@ -48,7 +48,7 @@ export class VideosContanierComponent implements OnInit, OnDestroy {
 		return pageEvent;
 	}
 
-	ngOnDestroy(): void {
+	public ngOnDestroy(): void {
 		this.subscription.unsubscribe();
 	}
 }
