@@ -29,15 +29,9 @@ export class DisplayDataService {
 	}
 
 	public displayGrid() {
-		console.log('grid');
-
 		this.gridBehaviorSubject.next(true);
-		console.log(this.grid$);
 	}
 	public displayList() {
-		console.log('list');
-
 		this.gridBehaviorSubject.next(false);
-		console.log(this.grid$);
 	}
 }
