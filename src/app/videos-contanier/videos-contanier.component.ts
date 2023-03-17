@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Video } from '@core/models/video.model';
 import { VideosSort } from '@core/models/vidoes-sort.model';
+
 import { DisplayDataService } from '@core/services/display-data.service';
 import { VideosListService } from '@core/services/videos-list.service';
 

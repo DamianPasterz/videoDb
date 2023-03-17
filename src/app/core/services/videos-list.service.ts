@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Video } from '@core/models/video.model';
-import { LocalStorageService } from './local-store.service';
 import { Observable, BehaviorSubject } from 'rxjs';
 
+import { Video } from '@core/models/video.model';
+import { LocalStorageService } from './local-store.service';
 import { NewVideoService } from './new-video.service';
 import demo from 'tools/demo';
 

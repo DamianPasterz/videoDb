@@ -7,8 +7,6 @@ import { VideosSort } from '@core/models/vidoes-sort.model';
 })
 export class SortPipe implements PipeTransform {
 	transform(videos: Video[], sort: VideosSort): Video[] {
-		console.log(sort);
-
 		switch (sort) {
 			case VideosSort.fromAtoZ:
 				videos.sort((a, b) =>
@@ -22,11 +20,9 @@ export class SortPipe implements PipeTransform {
 				break;
 			case VideosSort.fromOldToNew:
 				videos.sort((a, b) => (a.createdDate < b.createdDate ? 1 : b.createdDate < a.createdDate ? -1 : 0));
-
 				break;
 			case VideosSort.fromNewToOld:
 				videos.sort((a, b) => (a.createdDate > b.createdDate ? 1 : b.createdDate > a.createdDate ? -1 : 0));
-
 				break;
 			default:
 				videos;

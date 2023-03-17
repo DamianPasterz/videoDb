@@ -23,28 +23,27 @@
         padding: 0;
       }
     }
-
-    &__button {
-      display: flex;
-      align-items: center;
-      height: 30px;
-      cursor: pointer;
-      border: none;
-      border-radius:10px;
-      font-weight: bold;
-      background: rgba(135,140,2,1);
-          &:hover {
-              border-radius: 10px;
-              color:  white;
-          }
-      &__icon {
-        font-size: 16px;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius:10px;
+    font-weight: bold;
+    background: rgba(135,140,2,1);
         &:hover {
-          animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-          transform: translate3d(0, 0, 0);
-          backface-visibility: hidden;
-          perspective: 1000px;
+            border-radius: 10px;
+            color:  white;
         }
+    &__icon {
+      font-size: 16px;
+      &:hover {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
       }
     }
     &__icon {
