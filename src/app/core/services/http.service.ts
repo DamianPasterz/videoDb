@@ -15,9 +15,9 @@ export class VimeoService {
 	public getVimeoData(vimeoId: string): Observable<VimeoResponse> {
 		return this.http.get<VimeoResponse>(`${fetchURL.VimeoFetchUrl}/${vimeoId}`);
 	}
-	public getYouTubeData(YouTubeId: string): Observable<YouTubeResponse> {
+	public getYouTubeData(youTubeId: string): Observable<YouTubeResponse> {
 		return this.http.get<YouTubeResponse>(
-			`${fetchURL.YouTubFetchUrl}${YouTubeId}&key=${environment.APP_KEY_YOUTUBE_API}${fetchURL.YouTubeSnipetPartUrl}`,
+			`${fetchURL.YouTubFetchUrl}${youTubeId}&key=${environment.APP_KEY_YOUTUBE_API}${fetchURL.YouTubeSnipetPartUrl}`,
 		);
 	}
 }

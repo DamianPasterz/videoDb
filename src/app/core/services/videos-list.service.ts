@@ -21,37 +21,35 @@ export class VideosListService {
 
 	public adVideo(video: Video): void {
 		this.videos.push(video);
-
-		this.videosBehaviorSubject.next(this.videos);
-		this.localStorageService.saveToLocalStorage(this.videos);
+		this.setVidoes();
 	}
 
-	public deleteVideo(index: number) {
+	public deleteVideo(index: number): void {
 		this.videos.splice(index, 1);
-		this.localStorageService.saveToLocalStorage(this.videos);
-		this.videosBehaviorSubject.next(this.videos);
+		this.setVidoes();
 	}
 
-	public toogleFavorite(id: number | string) {
-		const videosToLove = this.videos.map(item => {
+	public toogleFavorite(id: number | string): void {
+		this.videos = this.videos.map(item => {
 			if (item.videoId === id) {
 				item.favourite = !item.favourite;
 			}
 			return item;
 		});
-
-		this.videosBehaviorSubject.next(videosToLove);
-		this.localStorageService.saveToLocalStorage(videosToLove);
+		this.setVidoes();
 	}
 
-	public deleteAllVideos() {
+	public deleteAllVideos(): void {
 		this.videos = [];
-		this.videosBehaviorSubject.next(this.videos);
-		this.localStorageService.saveToLocalStorage(this.videos);
+		this.setVidoes();
 	}
 
-	public addDemoList() {
+	public addDemoList(): void {
 		this.videos = [...this.videos, ...demo];
+		this.setVidoes();
+	}
+
+	private setVidoes(): void {
 		this.videosBehaviorSubject.next(this.videos);
 		this.localStorageService.saveToLocalStorage(this.videos);
 	}

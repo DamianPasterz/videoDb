@@ -24,7 +24,7 @@ export class DisplayDataService {
 		this.favouriteBehaviorSubject.next(false);
 	}
 
-	public getSortVideos(sort: VideosSort) {
+	public getSortVideos(sort: VideosSort): void {
 		this.sortVideosBehaviorSubject.next(sort);
 	}
 
