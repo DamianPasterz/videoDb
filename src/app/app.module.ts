@@ -16,6 +16,7 @@ import { VideosItemComponent } from './video-item/video-item.component';
 import { SortBarComponent } from './sort-bar/sort-bar.component';
 import { FilterFavoritePipe } from './videos-contanier/pipe/filter-favorite.pipe';
 import { SortPipe } from './videos-contanier/pipe/sort.pipe';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
 	declarations: [
@@ -28,6 +29,7 @@ import { SortPipe } from './videos-contanier/pipe/sort.pipe';
 		SortBarComponent,
 		FilterFavoritePipe,
 		SortPipe,
+		DialogComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -40,5 +42,6 @@ import { SortPipe } from './videos-contanier/pipe/sort.pipe';
 	],
 	providers: [],
 	bootstrap: [AppComponent],
+	entryComponents: [DialogComponent],
 })
 export class AppModule {}

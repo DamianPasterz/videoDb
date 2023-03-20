@@ -1,5 +1,5 @@
 <mat-card class="video-item" [ngClass]="{ list: (grid$ | async) === false }">
-	<img mat-card-image [src]="video.img" alt="Video image" />
+	<a routerLink="/{{ video.videoId }}/video"> <img mat-card-image [src]="video.img" alt="Video image" /></a>
 	<mat-card-title class="video-item__title" [ngClass]="{ title__list: (grid$ | async) === false }">{{
 		video.title
 	}}</mat-card-title>
