@@ -13,7 +13,9 @@ export class LocalStorageService {
 	}
 
 	public getLocalStorage(): Video[] {
-		const item = window.localStorage.getItem(this.localStorageName);
+		const item = window.localStorage.getItem(this.localStorageName)
+			? window.localStorage.getItem(this.localStorageName)
+			: null;
 		return JSON.parse(item);
 	}
 }
