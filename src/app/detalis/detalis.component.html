@@ -1,8 +1,8 @@
-<div *ngIf="video; else noVidoe">
+<div *ngIf="video; else noVideo">
 	<p>{{ video?.title }}</p>
 	<p>{{ video?.likeCount }}</p>
 </div>
 
-<ng-template #noVidoe>
+<ng-template #noVideo>
 	<p>brak video</p>
 </ng-template>
