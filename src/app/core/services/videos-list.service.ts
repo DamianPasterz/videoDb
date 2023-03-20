@@ -10,14 +10,12 @@ import demo from '@tools/demo';
 	providedIn: 'root',
 })
 export class VideosListService {
-	private videos: Video[] = this.localStorageService.getLocalStorage();
+	private videos: Video[] = JSON.parse(localStorage.getItem('videos') || '[]') as Video[];
 
-	private videosBehaviorSubject = new BehaviorSubject<Video[]>([]);
+	private videosBehaviorSubject = new BehaviorSubject<Video[]>(this.videos);
 	public videos$: Observable<Video[]> = this.videosBehaviorSubject.asObservable();
 
-	constructor(public newVideoService: NewVideoService, public localStorageService: LocalStorageService) {
-		this.videosBehaviorSubject.next(JSON.parse(window.localStorage.getItem('video-db')));
-	}
+	constructor(public newVideoService: NewVideoService, public localStorageService: LocalStorageService) {}
 
 	public adVideo(video: Video): void {
 		this.videos.push(video);

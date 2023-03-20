@@ -10,14 +10,14 @@ import { VideoServices } from '@core/models/videoServices.model';
 export class NewVideoService {
 	public item: Video;
 
-	public createNewViemoItem(data: VimeoResponse): Video {
+	public createNewVimeoItem(data: VimeoResponse): Video {
 		this.item = {
 			title: data.title,
 			provider: VideoServices.vimeo,
 			favourite: false,
 			videoId: data.video_id,
 			img: data.thumbnail_url,
-			viewCount: 0,
+			viewCount: '0',
 			createdDate: new Date(),
 		};
 		return this.item;
@@ -29,7 +29,7 @@ export class NewVideoService {
 			favourite: false,
 			videoId: data.items[0].id,
 			img: data.items[0].snippet.thumbnails.default.url,
-			viewCount: Number(data.items[0].statistics.viewCount),
+			viewCount: data.items[0].statistics.viewCount,
 			createdDate: new Date(),
 		};
 		return this.item;

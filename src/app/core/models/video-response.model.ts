@@ -4,7 +4,7 @@ export interface VimeoResponse {
 	title: string;
 	description: string;
 	thumbnail_url: string;
-	video_id: number;
+	video_id: string;
 }
 
 export interface YouTubeResponse {

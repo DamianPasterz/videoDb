@@ -11,11 +11,4 @@ export class LocalStorageService {
 	public saveToLocalStorage(videosList: Video[]): void {
 		localStorage.setItem(this.localStorageName, JSON.stringify(videosList));
 	}
-
-	public getLocalStorage(): Video[] {
-		const item = window.localStorage.getItem(this.localStorageName)
-			? window.localStorage.getItem(this.localStorageName)
-			: null;
-		return JSON.parse(item);
-	}
 }

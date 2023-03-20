@@ -3,15 +3,15 @@ import { VideoServices } from '@core/models/videoServices.model';
 
 const demo: Video[] = [
 	{
-		videoId: 400209878,
+		videoId: '400209878',
 		title: 'Returning (Trailer)',
 		img: 'https://i.vimeocdn.com/video/937982743-97d95718b82ea2ad460e7c806985c91b2f1954a3db04779b22c66692514525b3-d_295x166',
 		provider: VideoServices.vimeo,
 		createdDate: new Date(2002, 2, 2),
 		movieUrl: 'https://www.vimeo.com/400209878',
 		favourite: false,
-		likeCount: 5,
-		viewCount: 5855,
+		likeCount: '5',
+		viewCount: '5855',
 	},
 	{
 		videoId: 'qE95PTxEtoU',
@@ -69,7 +69,7 @@ const demo: Video[] = [
 		favourite: false,
 	},
 	{
-		videoId: 731378604,
+		videoId: '731378604',
 		title: 'ADIDAS FT. RICK & MORTY - X SPEEDPORTAL',
 		img: 'https://i.vimeocdn.com/video/1472007181-73e69fc0c310e281c90338ff4d875f827199821fed7390fc7b48c00b2b94c6e8-d_295x166',
 		provider: VideoServices.vimeo,
@@ -78,7 +78,7 @@ const demo: Video[] = [
 		favourite: false,
 	},
 	{
-		videoId: 724918260,
+		videoId: '724918260',
 		title: 'This is Home - Kurt Sorge | SHIMANO',
 		img: 'https://i.vimeocdn.com/video/1472704928-1f01c027d9bb98508c9430c291090348fe0f39dd8e5a7011e649db6da6c1e21e-d_295x166',
 		provider: VideoServices.vimeo,
