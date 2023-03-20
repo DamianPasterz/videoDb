@@ -1,8 +1,11 @@
-<div *ngIf="video; else noVideo">
-	<p>{{ video?.title }}</p>
-	<p>{{ video?.likeCount }}</p>
-</div>
+<div class="modal-contanier">
+	<mat-dialog-content class="mat-typography">
+		<h2 mat-dialog-title>{{ video?.title }}</h2>
 
-<ng-template #noVideo>
-	<p>brak video</p>
-</ng-template>
+		<p>{{ video?.movieUrl }}</p>
+
+		<ng-template #noVideo>
+			<p>brak video</p>
+		</ng-template>
+	</mat-dialog-content>
+</div>

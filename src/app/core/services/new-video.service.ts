@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { fetchURL } from '@core/models/video-fetch.config';
 
 import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.model';
 import { Video } from '@core/models/video.model';
@@ -15,10 +16,11 @@ export class NewVideoService {
 			title: data.title,
 			provider: VideoServices.vimeo,
 			favourite: false,
-			videoId: data.video_id,
+			videoId: data.video_id.toString(),
 			img: data.thumbnail_url,
 			viewCount: '0',
 			createdDate: new Date(),
+			movieUrl: fetchURL.VimeoMovieUrl + data.video_id,
 		};
 		return this.item;
 	}
@@ -31,6 +33,7 @@ export class NewVideoService {
 			img: data.items[0].snippet.thumbnails.default.url,
 			viewCount: data.items[0].statistics.viewCount,
 			createdDate: new Date(),
+			movieUrl: fetchURL.YouTubeMovieUrl + data.items[0].id,
 		};
 		return this.item;
 	}

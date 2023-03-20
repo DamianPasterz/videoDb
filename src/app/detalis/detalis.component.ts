@@ -15,9 +15,12 @@ export class DetalisComponent implements OnInit, OnDestroy {
 	constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private videosListServic: VideosListService) {}
 
 	ngOnInit() {
+		console.log(this.data.id);
+
 		this.subscription = this.videosListServic.videos$.subscribe(videos => {
 			this.video = videos.find(video => video.videoId === this.data.id);
 		});
+		console.log(this.video);
 	}
 
 	ngOnDestroy() {
