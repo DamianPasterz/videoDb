@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DialogComponent } from './dialog/dialog.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
 	},
 	{
 		path: ':id/video',
-		component: DialogComponent,
+		component: HomeComponent,
 	},
 ];
 

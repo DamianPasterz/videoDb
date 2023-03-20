@@ -10,7 +10,7 @@ import demo from '@tools/demo';
 	providedIn: 'root',
 })
 export class VideosListService {
-	private videos: Video[] = JSON.parse(localStorage.getItem('videos') || '[]') as Video[];
+	private videos: Video[] = JSON.parse(localStorage.getItem('video-db') || '[]') as Video[];
 
 	private videosBehaviorSubject = new BehaviorSubject<Video[]>(this.videos);
 	public videos$: Observable<Video[]> = this.videosBehaviorSubject.asObservable();
