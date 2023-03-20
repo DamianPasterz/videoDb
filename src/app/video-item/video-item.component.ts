@@ -11,10 +11,10 @@ import { DisplayDataService } from '@core/services/display-data.service';
 	styleUrls: ['./video-item.component.scss'],
 })
 export class VideosItemComponent implements OnInit {
-	public grid$: Observable<boolean>;
-
 	@Input() video: Video;
 	@Input() index: number;
+
+	public grid$: Observable<boolean>;
 
 	constructor(public videosListService: VideosListService, public displayDataService: DisplayDataService) {}
 

@@ -29,15 +29,7 @@ import { SortPipe } from './videos-contanier/pipe/sort.pipe';
 		FilterFavoritePipe,
 		SortPipe,
 	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		MaterialModule,
-		FormsModule,
-		StoreModule.forRoot({}, {}),
-		HttpClientModule,
-	],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, FormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

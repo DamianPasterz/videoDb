@@ -33,7 +33,7 @@ export class SearchBarComponent {
 
 		if (inputData.provider === VideoServices.vimeo) {
 			this.httpService.getVimeoData(inputData.id).subscribe((date: VimeoResponse) => {
-				newVideo = this.newVideoService.createNewViemoItem(date);
+				newVideo = this.newVideoService.createNewVimeoItem(date);
 				this.videoListService.adVideo(newVideo);
 			});
 			return;
