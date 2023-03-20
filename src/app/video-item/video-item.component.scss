@@ -16,13 +16,18 @@
     box-shadow: 5px 5px 10px $green1;
   }
     
-  & > img {
+  &__image {
     width: 180px;
     height: 120px;
     border: 1px solid  $green1;
     box-shadow: 5px 5px 15px $green3;
     border-radius: 10px;
     cursor: pointer;
+    background-size: cover; 
+    
+    &:hover {
+        box-shadow: 5px 5px 10px $green1;
+    }
   }
 
   &__title {

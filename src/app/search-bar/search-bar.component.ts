@@ -9,6 +9,7 @@ import { Video } from '@core/models/video.model';
 import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.model';
 import { NewVideoService } from '@core/services/new-video.service';
 import { VideosListService } from '@core/services/videos-list.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-search-bar',
@@ -18,6 +19,8 @@ import { VideosListService } from '@core/services/videos-list.service';
 export class SearchBarComponent {
 	public isValidationErrorVisible: boolean;
 	public minInput = minInput;
+	private subscription: Subscription;
+	private isExsist: number;
 
 	constructor(
 		public inputService: InputService,
@@ -30,20 +33,26 @@ export class SearchBarComponent {
 		let newVideo: Video;
 		if (form.invalid) this.isValidationErrorVisible = true;
 		const inputData = this.inputService.onProviderAndIdCheck(form.value.value);
-
-		if (inputData.provider === VideoServices.vimeo) {
-			this.httpService.getVimeoData(inputData.id).subscribe((date: VimeoResponse) => {
-				newVideo = this.newVideoService.createNewVimeoItem(date);
-				this.videoListService.adVideo(newVideo);
-			});
-			return;
-		}
-		if (inputData.provider === VideoServices.youtube) {
-			this.httpService.getYouTubeData(inputData.id).subscribe((date: YouTubeResponse) => {
-				newVideo = this.newVideoService.createNewYouTubeItem(date);
-				this.videoListService.adVideo(newVideo);
-			});
-			return;
+		form.reset();
+		this.subscription = this.videoListService.videos$.subscribe(videos => {
+			this.isExsist = videos.findIndex(video => video.videoId === inputData.id);
+			console.log(this.isExsist);
+		});
+		if (this.isExsist === -1) {
+			if (inputData.provider === VideoServices.vimeo) {
+				this.httpService.getVimeoData(inputData.id).subscribe((date: VimeoResponse) => {
+					newVideo = this.newVideoService.createNewVimeoItem(date);
+					this.videoListService.adVideo(newVideo);
+				});
+				return;
+			}
+			if (inputData.provider === VideoServices.youtube) {
+				this.httpService.getYouTubeData(inputData.id).subscribe((date: YouTubeResponse) => {
+					newVideo = this.newVideoService.createNewYouTubeItem(date);
+					this.videoListService.adVideo(newVideo);
+				});
+				return;
+			}
 		}
 	}
 }

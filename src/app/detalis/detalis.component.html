@@ -1,9 +1,12 @@
 <div class="modal-contanier">
 	<mat-dialog-content class="mat-typography">
 		<h2 mat-dialog-title>{{ video?.title }}</h2>
-
-		<p>{{ video?.movieUrl }}</p>
-
+		<iframe
+			width="425"
+			height="256"
+			[src]="link"
+			frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 		<ng-template #noVideo>
 			<p>brak video</p>
 		</ng-template>

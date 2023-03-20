@@ -7,6 +7,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const material = [
 	MatToolbarModule,
@@ -17,6 +18,7 @@ const material = [
 	MatPaginatorModule,
 	MatMenuModule,
 	MatGridListModule,
+	MatTabsModule,
 ];
 
 @NgModule({
