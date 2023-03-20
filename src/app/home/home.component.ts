@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Subject, takeUntil } from 'rxjs';
 import { DetalisComponent } from 'app/detalis/detalis.component';
 
@@ -24,8 +24,10 @@ export class HomeComponent implements OnDestroy, OnInit {
 	}
 
 	private openDialog(id: string) {
+		console.log(id);
+
 		const currentDialog = this.matDialog.open(DetalisComponent, {
-			data: id,
+			data: { id },
 		});
 		currentDialog.afterClosed().subscribe(result => {
 			this.router.navigateByUrl('');

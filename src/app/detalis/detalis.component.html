@@ -1,1 +1,8 @@
-<p>detalis works!</p>
+<div *ngIf="video; else noVidoe">
+	<p>{{ video?.title }}</p>
+	<p>{{ video?.likeCount }}</p>
+</div>
+
+<ng-template #noVidoe>
+	<p>brak video</p>
+</ng-template>
