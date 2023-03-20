@@ -36,7 +36,6 @@ export class SearchBarComponent {
 		form.reset();
 		this.subscription = this.videoListService.videos$.subscribe(videos => {
 			this.isExsist = videos.findIndex(video => video.videoId === inputData.id);
-			console.log(this.isExsist);
 		});
 		if (this.isExsist === -1) {
 			if (inputData.provider === VideoServices.vimeo) {
