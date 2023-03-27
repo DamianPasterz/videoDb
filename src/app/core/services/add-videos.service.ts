@@ -24,6 +24,7 @@ export class AddVideosService {
 
 	public addVideo(form: NgForm): void {
 		let newVideo: Video;
+
 		if (form.invalid) this.isValidationErrorVisible = true;
 		const inputData = this.inputService.onProviderAndIdCheck(form.value.value);
 
@@ -37,6 +38,7 @@ export class AddVideosService {
 				});
 			return;
 		}
+
 		if (inputData.provider === VideoServices.youtube) {
 			this.httpService
 				.getYouTubeData(inputData.id)

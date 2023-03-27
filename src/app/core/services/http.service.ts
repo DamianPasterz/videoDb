@@ -15,6 +15,7 @@ export class HttpService {
 	public getVimeoData(vimeoId: string): Observable<VimeoResponse> {
 		return this.http.get<VimeoResponse>(`${fetchURL.VimeoFetchUrl}/${vimeoId}`);
 	}
+
 	public getYouTubeData(youTubeId: string): Observable<YouTubeResponse> {
 		return this.http.get<YouTubeResponse>(
 			`${fetchURL.YouTubFetchUrl}${youTubeId}&key=${environment.APP_KEY_YOUTUBE_API}${fetchURL.YouTubeSnipetPartUrl}`,
