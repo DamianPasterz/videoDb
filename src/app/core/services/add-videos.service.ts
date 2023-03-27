@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.model';
 import { Video } from '@core/models/video.model';
 import { VideoServices } from '@core/models/videoServices.model';
+import { take } from 'rxjs';
 import { HttpService } from './http.service';
 import { InputService } from './input.service';
 import { NewVideoService } from './new-video.service';
@@ -27,17 +28,23 @@ export class AddVideosService {
 		const inputData = this.inputService.onProviderAndIdCheck(form.value.value);
 
 		if (inputData.provider === VideoServices.vimeo) {
-			this.httpService.getVimeoData(inputData.id).subscribe((date: VimeoResponse) => {
-				newVideo = this.newVideoService.createNewVimeoItem(date);
-				this.videoListService.adVideo(newVideo);
-			});
+			this.httpService
+				.getVimeoData(inputData.id)
+				.pipe(take(1))
+				.subscribe((date: VimeoResponse) => {
+					newVideo = this.newVideoService.createNewVimeoItem(date);
+					this.videoListService.adVideo(newVideo);
+				});
 			return;
 		}
 		if (inputData.provider === VideoServices.youtube) {
-			this.httpService.getYouTubeData(inputData.id).subscribe((date: YouTubeResponse) => {
-				newVideo = this.newVideoService.createNewYouTubeItem(date);
-				this.videoListService.adVideo(newVideo);
-			});
+			this.httpService
+				.getYouTubeData(inputData.id)
+				.pipe(take(1))
+				.subscribe((date: YouTubeResponse) => {
+					newVideo = this.newVideoService.createNewYouTubeItem(date);
+					this.videoListService.adVideo(newVideo);
+				});
 			return;
 		}
 	}
