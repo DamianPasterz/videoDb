@@ -12,32 +12,35 @@ import { VideosListService } from '@core/services/videos-list.service';
 export class SortBarComponent {
 	constructor(public videosListService: VideosListService, public displayDataService: DisplayDataService) {}
 
-	onDeleteAll() {
+	public onDeleteAll(): void {
 		this.videosListService.deleteAllVideos();
 	}
 
-	onDemoLoad() {
+	public onDemoLoad(): void {
 		this.videosListService.addDemoList();
 	}
 
-	onFromOldToNew() {
+	public onFromOldToNew(): void {
 		this.displayDataService.getSortVideos(VideosSort.fromOldToNew);
 	}
-	onFromNewToOld() {
+
+	public onFromNewToOld(): void {
 		this.displayDataService.getSortVideos(VideosSort.fromNewToOld);
 	}
 
-	onFromAToZ() {
+	public onFromAToZ(): void {
 		this.displayDataService.getSortVideos(VideosSort.fromAtoZ);
 	}
-	onFromZToA() {
+
+	public onFromZToA(): void {
 		this.displayDataService.getSortVideos(VideosSort.fromZtoA);
 	}
 
-	onDisplayGrid() {
+	public onDisplayGrid(): void {
 		this.displayDataService.displayGrid();
 	}
-	onDisplayList() {
+
+	public onDisplayList(): void {
 		this.displayDataService.displayList();
 	}
 }

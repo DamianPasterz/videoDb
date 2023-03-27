@@ -9,7 +9,7 @@ import { VimeoResponse, YouTubeResponse } from '@core/models/video-response.mode
 @Injectable({
 	providedIn: 'root',
 })
-export class VimeoService {
+export class HttpService {
 	constructor(private http: HttpClient) {}
 
 	public getVimeoData(vimeoId: string): Observable<VimeoResponse> {

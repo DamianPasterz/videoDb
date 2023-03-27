@@ -8,25 +8,29 @@ export interface VimeoResponse {
 }
 
 export interface YouTubeResponse {
-	items: [
-		{
-			id: string;
-			snippet: {
-				publishedAt: string;
-				title: string;
-				description: string;
-				thumbnails: {
-					default: {
-						url: string;
-						width: number;
-						height: number;
-					};
-				};
-			};
-			statistics: {
-				viewCount: string;
-				likeCount: string;
-			};
-		},
-	];
+	items: YouTubeResponseItem[];
+}
+
+export interface YouTubeResponseItem {
+	id: string;
+	snippet: YouTubeResponseSnippet;
+	statistics: YouTubeResponseStatistics;
+}
+
+export interface YouTubeResponseSnippet {
+	publishedAt: string;
+	title: string;
+	description: string;
+	thumbnails: {
+		default: {
+			url: string;
+			width: number;
+			height: number;
+		};
+	};
+}
+
+export interface YouTubeResponseStatistics {
+	viewCount: string;
+	likeCount: string;
 }
