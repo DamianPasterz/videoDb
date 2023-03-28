@@ -1,7 +1,33 @@
-.videos-contanier {
+@import "styles";
+
+.videos {
+  border: none;
+  display: flex;
+  flex-direction: column;
   width: 80vw;
   height: 600px;
-  margin-top: 45px;
-  background-color: orangered;
-  padding: 15px;
+  margin-top: 25px;
+  background-color: gray;
+  padding: 5px;
+  box-shadow: none;
+ 
+  &__contanier {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: none;
+  }
+
+  &__paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin-top: 25px;
+    background-color: $green2;
+    height: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+    border: 2px solid $green1; ;
+  }
 }

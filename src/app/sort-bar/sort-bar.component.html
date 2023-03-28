@@ -1,0 +1,28 @@
+<mat-toolbar class="sort">
+	<div class="sort__action">
+		<button class="sort__button" (click)="onDemoLoad()">demo</button>
+		<button class="sort__button" (click)="onDeleteAll()">
+			Clear all
+			<i class="material-icons sort__button__icon">delete</i>
+		</button>
+	</div>
+	<div class="sort__action">
+		<button mat-icon-button [matMenuTriggerFor]="menu" class="sort__button">
+			<mat-icon>sort</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu" class="sort__menu">
+			<button class="sort__button" mat-menu-item (click)="onFromOldToNew()">from old</button>
+			<button class="sort__button" mat-menu-item (click)="onFromNewToOld()">from new</button>
+			<button class="sort__button" mat-menu-item (click)="onFromAToZ()">from A to Z</button>
+			<button class="sort__button" mat-menu-item (click)="onFromZToA()">from Z to A</button>
+		</mat-menu>
+	</div>
+	<div class="sort__action">
+		<button class="sort__button" (click)="onDisplayList()">
+			<mat-icon class="sort__action__icon">list</mat-icon>
+		</button>
+		<button class="sort__button" (click)="onDisplayGrid()">
+			<mat-icon class="sort__action__icon">view_module</mat-icon>
+		</button>
+	</div>
+</mat-toolbar>

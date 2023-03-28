@@ -1,11 +1,13 @@
-import { VideoServices } from "./videoServices.model";
+import { VideoServices } from './videoServices.model';
 
-export interface Video  {
-  provider: VideoServices;
-  favorite: boolean;
-  date: Date | string;
-  videoId: string;
-  title: string;
-  img: string;
-  viewCount: string;
-};
+export interface Video {
+	provider: VideoServices;
+	favourite: boolean;
+	videoId: string;
+	title: string;
+	img: string;
+	viewCount?: string;
+	likeCount?: string;
+	createdDate: Date;
+	movieUrl?: string;
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,10 @@ import { FavouriteBarComponent } from './favourite-bar/favourite-bar.component';
 import { HomeComponent } from './home/home.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VideosContanierComponent } from './videos-contanier/videos-contanier.component';
-import { VideosItemComponent } from './videos-item/videos-item.component';
+import { VideosItemComponent } from './video-item/video-item.component';
+import { SortBarComponent } from './sort-bar/sort-bar.component';
+import { FilterFavoritePipe } from './videos-contanier/pipe/filter-favorite.pipe';
+import { SortPipe } from './videos-contanier/pipe/sort.pipe';
 
 @NgModule({
 	declarations: [
@@ -21,15 +25,11 @@ import { VideosItemComponent } from './videos-item/videos-item.component';
 		SearchBarComponent,
 		VideosContanierComponent,
 		VideosItemComponent,
+		SortBarComponent,
+		FilterFavoritePipe,
+		SortPipe,
 	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		MaterialModule,
-		FormsModule,
-		StoreModule.forRoot({}, {}),
-	],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, FormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

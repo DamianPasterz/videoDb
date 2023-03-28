@@ -1,0 +1,74 @@
+@import 'styles';
+
+.sort {
+  height: 40px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  border-radius: 16px;
+  border: 2px solid $green1;
+  background-color: $green2;
+  padding: 5px;
+  box-shadow: 5px 5px 10px black;
+
+  &__action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 15px;
+
+    &__button {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius:10px;
+    font-weight: bold;
+    background:$green2;
+        &:hover {
+          border-radius: 10px;
+          color:  white;
+        }
+    &__icon {
+      font-size: 16px;
+      &:hover {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+    }
+    &__icon {
+      padding: 5px;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-3px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(3px, 0, 0);
+    }
+  }
+}

@@ -19,7 +19,9 @@
     "target": "ES2022",
     "module": "ES2022",
     "paths": {
-      "@core/*": ["app/core/*"]
+      "@core/*": ["app/core/*"],
+      "@environments/*": ["environments/*"],
+      "@tools/*": ["tools/*"]
     },
     "useDefineForClassFields": false,
     "lib": [

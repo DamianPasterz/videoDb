@@ -1,3 +1,22 @@
-<mat-card class="videos-contanier">
-	<app-videos-item></app-videos-item>
+<mat-card class="videos">
+	<div class="videos__contanier" [ngStyle]="{ flexDirection: (grid$ | async) ? 'row' : 'column' }">
+		<app-video-item
+			*ngFor="
+				let video of videos$
+					| async
+					| filterFavorite : (favourite$ | async)
+					| sort : (sortVideos$ | async)
+					| slice : firstPage : secondPage;
+				let index = index
+			"
+			[video]="video"
+			[index]="index"></app-video-item>
+	</div>
+	<mat-paginator
+		class="videos__paginator"
+		#paginator
+		[length]="(videos$ | async | filterFavorite : (favourite$ | async)).length"
+		[pageSize]="pageSize"
+		(page)="pageEvent = setPaginator($event)">
+	</mat-paginator>
 </mat-card>
